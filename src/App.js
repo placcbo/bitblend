@@ -1,14 +1,18 @@
+// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import { Layout, Typography, Space } from 'antd';
 import { Navbar, Exchanges, Homepage, Cryptocurrencies, News, Cryptodetails } from './components';
+import useSystemTheme from './components/useSystemTheme'
 
 const App = () => {
-  return (
+  const theme = useSystemTheme(); // 'dark' or 'light'
 
-      <div className="app">
+  return (
+  
+      <div className={`app ${theme}`}> {/* ⬅️ Add theme class to root */}
         <div className="navbar">
           <Navbar />
         </div>
@@ -38,10 +42,9 @@ const App = () => {
             <span className="link-separator">|</span>
             <a href="/news" className="footer-link">NEWS</a>
           </Space>
-        
         </div>
       </div>
-   
+
   );
 };
 

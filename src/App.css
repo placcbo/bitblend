@@ -1,5 +1,4 @@
-/* App.css */
-
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +7,6 @@
 
 body, html, #root {
   height: 100%;
-  background-color: #0d0d0d;
-  color: #f0f0f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -19,11 +16,131 @@ body, html, #root {
   min-height: 100vh;
 }
 
-.navbar {
+/* =======================
+   DARK THEME
+======================= */
+.app.dark {
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+}
+
+.app.dark .navbar {
   background-color: #1a1a1a;
-  padding: 10px 20px;
   box-shadow: 0 2px 10px rgba(0, 255, 157, 0.1);
 }
+
+.app.dark .logo {
+  color: #00ff9d !important;
+}
+
+.app.dark .logo-subtext {
+  color: #ccc;
+}
+
+.app.dark .menu-control-container {
+  color: #00ff9d;
+}
+
+.app.dark .menu-control-container:hover {
+  color: #00ffaa;
+}
+
+.app.dark .cyber-menu .ant-menu-item a {
+  color: #fff !important;
+}
+
+.app.dark .cyber-menu .ant-menu-item a:hover {
+  color: #00ff9d !important;
+}
+
+.app.dark .cyber-footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid #00ff9d33;
+}
+
+.app.dark .footer-title,
+.app.dark .glow-text {
+  color: #00ff9d;
+  text-shadow: 0 0 5px #00ff9d;
+}
+
+.app.dark .footer-link {
+  color: #ccc;
+}
+
+.app.dark .footer-link:hover {
+  color: #00ff9d;
+}
+
+.app.dark .link-separator {
+  color: #444;
+}
+
+
+/* =======================
+   LIGHT THEME
+======================= */
+.app.light {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.app.light .navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app.light .logo {
+  color: #007d5b !important;
+}
+
+.app.light .logo-subtext {
+  color: #666;
+}
+
+.app.light .menu-control-container {
+  color: #007d5b;
+}
+
+.app.light .menu-control-container:hover {
+  color: #00cc99;
+}
+
+.app.light .cyber-menu .ant-menu-item a {
+  color: #1a1a1a !important;
+}
+
+.app.light .cyber-menu .ant-menu-item a:hover {
+  color: #00aa88 !important;
+}
+
+.app.light .cyber-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #007d5b33;
+}
+
+.app.light .footer-title,
+.app.light .glow-text {
+  color: #007d5b;
+  text-shadow: 0 0 5px #66ffcc;
+}
+
+.app.light .footer-link {
+  color: #666;
+}
+
+.app.light .footer-link:hover {
+  color: #007d5b;
+}
+
+.app.light .link-separator {
+  color: #bbb;
+}
+
+
+/* =======================
+   Shared (Theme-agnostic)
+======================= */
 
 .nav-container {
   display: flex;
@@ -38,7 +155,6 @@ body, html, #root {
 }
 
 .logo {
-  color: #00ff9d !important;
   margin: 0 !important;
   font-size: 1.5rem !important;
   line-height: 1;
@@ -46,24 +162,17 @@ body, html, #root {
 
 .logo-subtext {
   font-size: 0.75rem;
-  color: #ccc;
   margin-left: 5px;
 }
 
-/* Burger Menu Button */
 .menu-control-container {
   border: none;
   background: transparent;
-  color: #00ff9d;
   font-size: 1.8rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: color 0.3s ease;
-}
-
-.menu-control-container:hover {
-  color: #00ffaa;
 }
 
 .menu-icon {
@@ -72,7 +181,6 @@ body, html, #root {
   justify-content: center;
 }
 
-/* Desktop Menu */
 .cyber-menu {
   flex-grow: 1;
   display: flex;
@@ -92,16 +200,6 @@ body, html, #root {
   font-size: 1rem;
 }
 
-.cyber-menu .ant-menu-item a {
-  color: #fff !important;
-  text-decoration: none;
-}
-
-.cyber-menu .ant-menu-item a:hover {
-  color: #00ff9d !important;
-}
-
-/* Main content area */
 .main {
   flex-grow: 1;
   padding: 20px;
@@ -116,45 +214,15 @@ body, html, #root {
   margin-top: 20px;
 }
 
-/* Drawer menu for mobile */
 .cyber-menu-mobile .ant-menu-item {
   padding: 15px 20px;
   font-size: 1rem;
 }
 
-/* Footer */
-.cyber-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #1a1a1a;
-  border-top: 1px solid #00ff9d33;
-  margin-top: auto;
-}
-
 .footer-title {
-  color: #00ff9d !important;
   font-weight: 600;
-}
-
-.glow-text {
-  color: #00ff9d;
-  text-shadow: 0 0 5px #00ff9d;
 }
 
 .footer-links {
   margin-top: 10px;
-}
-
-.footer-link {
-  color: #ccc;
-  text-decoration: none;
-  padding: 0 8px;
-}
-
-.footer-link:hover {
-  color: #00ff9d;
-}
-
-.link-separator {
-  color: #444;
 }
