@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -54,14 +56,9 @@ body, html, #root {
 }
 
 .app.dark .cyber-footer {
-  background-color: #1a1a1a;
+  background-color: #121212;
   border-top: 1px solid #00ff9d33;
-}
-
-.app.dark .footer-title,
-.app.dark .glow-text {
-  color: #00ff9d;
-  text-shadow: 0 0 5px #00ff9d;
+  color: #f0f0f0;
 }
 
 .app.dark .footer-link {
@@ -70,12 +67,12 @@ body, html, #root {
 
 .app.dark .footer-link:hover {
   color: #00ff9d;
+  text-shadow: 0 0 5px #00ff9d;
 }
 
 .app.dark .link-separator {
   color: #444;
 }
-
 
 /* =======================
    LIGHT THEME
@@ -117,12 +114,7 @@ body, html, #root {
 .app.light .cyber-footer {
   background-color: #ffffff;
   border-top: 1px solid #007d5b33;
-}
-
-.app.light .footer-title,
-.app.light .glow-text {
-  color: #007d5b;
-  text-shadow: 0 0 5px #66ffcc;
+  color: #1a1a1a;
 }
 
 .app.light .footer-link {
@@ -131,17 +123,16 @@ body, html, #root {
 
 .app.light .footer-link:hover {
   color: #007d5b;
+  text-shadow: 0 0 3px #88ffdd;
 }
 
 .app.light .link-separator {
   color: #bbb;
 }
 
-
 /* =======================
-   Shared (Theme-agnostic)
+   Shared Styles
 ======================= */
-
 .nav-container {
   display: flex;
   align-items: center;
@@ -175,12 +166,6 @@ body, html, #root {
   transition: color 0.3s ease;
 }
 
-.menu-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .cyber-menu {
   flex-grow: 1;
   display: flex;
@@ -203,6 +188,7 @@ body, html, #root {
 .main {
   flex-grow: 1;
   padding: 20px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
 }
 
 .cyber-layout {
@@ -212,6 +198,7 @@ body, html, #root {
 
 .routes {
   margin-top: 20px;
+  transition: margin-top 0.3s ease-in-out;
 }
 
 .cyber-menu-mobile .ant-menu-item {
@@ -219,10 +206,75 @@ body, html, #root {
   font-size: 1rem;
 }
 
+/* =======================
+   CYBER FOOTER
+======================= */
+.cyber-footer {
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-top: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cyber-footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,157,0.07), transparent 70%);
+  animation: rotateGlow 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .footer-title {
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .footer-links {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-link {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.link-separator {
+  margin: 0 5px;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cyber-menu {
+    justify-content: center;
+  }
 }
