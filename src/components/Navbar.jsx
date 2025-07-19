@@ -61,7 +61,7 @@ const Navbar = () => {
         <Typography.Title level={2} className="logo">
           <Link to="/">BitBlend</Link>
         </Typography.Title>
-        <Typography.Text className="logo-subtext">CRYPTO HUB</Typography.Text>
+       
         {!activeMenu && (
           <Button 
             className="menu-control-container"

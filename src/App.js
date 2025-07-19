@@ -33,7 +33,7 @@ const App = () => {
 
         <div className="cyber-footer">
           <Typography.Title level={5} className="footer-title">
-            BITBLEND <span className="glow-text">//</span> DECENTRALIZED FUTURE
+            BITBLEND <span className="glow-text">//</span> DECENTRALIZED Fnpm startUTURE
           </Typography.Title>
           <Space className="footer-links">
             <a href="/" className="footer-link">HOME</a>
