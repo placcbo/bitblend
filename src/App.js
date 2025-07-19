@@ -12,7 +12,7 @@ const App = () => {
 
   return (
   
-      <div className={`app ${theme}`}> {/* ⬅️ Add theme class to root */}
+      <div className={`app ${theme}`}> 
         <div className="navbar">
           <Navbar />
         </div>
@@ -42,6 +42,13 @@ const App = () => {
             <span className="link-separator">|</span>
             <a href="/news" className="footer-link">NEWS</a>
           </Space>
+          <div className = "footer" >
+            <Typography.Title level = {5} style = {{color:"white",textAlign:'center'}}>
+              BitBlend  <br/>
+              All rights reserved
+              </Typography.Title>
+
+          </div>
         </div>
       </div>
 
